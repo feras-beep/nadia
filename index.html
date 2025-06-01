@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disco Biryani Party</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes floatAround {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: translate(80vw, 40vh) scale(1.2);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translate(-60vw, -50vh) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .center-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      animation: rotate 10s linear infinite;
+      border-radius: 50%;
+      box-shadow: 0 0 40px magenta, 0 0 60px cyan, 0 0 80px yellow;
+    }
+
+    .quote {
+      position: absolute;
+      font-size: 2rem;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: white;
+      text-shadow: 0 0 10px red, 0 0 20px orange;
+      animation: floatAround 12s ease-in-out infinite alternate;
+    }
+
+    .quote:nth-child(2) {
+      top: 10%;
+      left: 20%;
+    }
+
+    .quote:nth-child(3) {
+      top: 80%;
+      left: 70%;
+      animation-delay: 3s;
+    }
+
+    .disco-lights {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 2%, transparent 3%) center center / 10px 10px repeat;
+      animation: flash 0.2s infinite;
+    }
+
+    @keyframes flash {
+      0% { background-color: rgba(255,0,0,0.1); }
+      25% { background-color: rgba(0,255,0,0.1); }
+      50% { background-color: rgba(0,0,255,0.1); }
+      75% { background-color: rgba(255,255,0,0.1); }
+      100% { background-color: rgba(255,0,255,0.1); }
+    }
+  </style>
+</head>
+<body>
+  <img src="IMG_6014.jpeg" alt="Spinning Image" class="center-image" />
+  <div class="quote">"just say no"</div>
+  <div class="quote">"let’s get biryani tonight"</div>
+  <div class="disco-lights"></div>
+
+  <audio autoplay loop>
+    <source src="circus.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
